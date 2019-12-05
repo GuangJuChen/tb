@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--	<context:component-scan base-package=""></context:component-scan>-->
+	<mvc:annotation-driven />
+	<!-- 打开静态资源，保证不会被拦截 -->
+	<mvc:default-servlet-handler/>
+	<bean
+			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 对静态资源文件的访问 -->
+	<mvc:resources location="/statics/dist/" mapping="/dist/**"/>
+	<mvc:resources location="/statics/docs/" mapping="/docs/**"/>
+	<mvc:resources location="/statics/pages/" mapping="/pages/**"/>
+	<mvc:resources location="/statics/plugins/" mapping="/plugins/**"/>
+	<mvc:resources location="/statics/" mapping="/statics/index.html"/>
+	<mvc:resources location="/statics/" mapping="/statics/index2.html"/>
+	<mvc:resources location="/statics/" mapping="/statics/index3.html"/>
+	<mvc:resources location="/statics/" mapping="/statics/start.html"/>
+</beans>

@@ -3,24 +3,54 @@
          xmlns:xis="http://www.w3.org/2001/XMLSchema-instance"
          xis:schemaLocation="http://java.sun.com/xml/ns/javaee
          http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-  <display-name>client</display-name>
+  <display-name>tb</display-name>
 
-  <!--2.配置前置控制器 -->
+  <!-- 加载欢迎页-->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <!-- 加载spring容器 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:spring/applicationContext-*.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:resource/log4j.properties</param-value>
+  </context-param>
+
+  <!-- 解决post乱码 -->
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!-- springmvc的前端控制器 -->
   <servlet>
-    <servlet-name>ClientDispatcherServlet</servlet-name>
+    <servlet-name>tb</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- contextConfigLocation不是必须的， 如果不配置contextConfigLocation， springmvc的配置文件默认在：WEB-INF/servlet的name+"-servlet.xml" -->
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:applicationContext.xml</param-value>
+      <param-value>classpath*:spring/springmvc.xml</param-value>
     </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ClientDispatcherServlet</servlet-name>
+    <servlet-name>tb</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 
-  <!--3.欢迎文件-->
-  <welcome-file-list>
-    <welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
-  </welcome-file-list>
 </web-app>
