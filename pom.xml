@@ -40,6 +40,8 @@
     <core.version>3.4.0</core.version>
     <gson.version>2.8.6</gson.version>
     <json.version>20190722</json.version>
+    <mybatis-plus.version>3.2.0</mybatis-plus.version>
+    <freemarker.version>2.3.29</freemarker.version>
   </properties>
 
 <!--  https://mvnrepository.com/ -->
@@ -139,7 +141,7 @@
     <!-- spring依赖  end-->
 
     <!-- 5. mybatis依赖  begin-->
-    <dependency>
+    <!--<dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
       <version>${mybatis.version}</version>
@@ -148,6 +150,21 @@
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
       <version>${mybatis-spring.version}</version>
+    </dependency>-->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-generator</artifactId>
+      <version>${mybatis-plus.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>${freemarker.version}</version>
     </dependency>
     <!-- mybatis依赖  end-->
 
@@ -311,5 +328,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--	<context:component-scan base-package=""></context:component-scan>-->
+	<context:component-scan base-package="com.chen.sys.controller"></context:component-scan>
 	<mvc:annotation-driven />
 	<!-- 打开静态资源，保证不会被拦截 -->
 	<mvc:default-servlet-handler/>
