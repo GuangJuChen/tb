@@ -7,7 +7,8 @@
 
   <!-- 加载欢迎页-->
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+<!--    <welcome-file>index.html</welcome-file>-->
+    <welcome-file>login.html</welcome-file>
   </welcome-file-list>
 
   <!-- 加载spring容器 -->
@@ -18,9 +19,19 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+
+  <!-- log4j2-begin -->
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+
+  <listener>
+    <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+  </listener>
   <context-param>
-    <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:resource/log4j.properties</param-value>
+    <param-name>log4jConfiguration</param-name>
+    <!--默认是classpath下的log4j2.xml-->
+    <param-value>classpath:log4j2.xml</param-value>
   </context-param>
 
   <!-- 解决post乱码 -->
@@ -39,7 +50,7 @@
 
   <!-- springmvc的前端控制器 -->
   <servlet>
-    <servlet-name>tb</servlet-name>
+    <servlet-name>springMvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!-- contextConfigLocation不是必须的， 如果不配置contextConfigLocation， springmvc的配置文件默认在：WEB-INF/servlet的name+"-servlet.xml" -->
     <init-param>
@@ -49,7 +60,7 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>tb</servlet-name>
+    <servlet-name>springMvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
 

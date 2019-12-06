@@ -24,9 +24,11 @@
     <mysql.version>8.0.18</mysql.version>
     <druid.version>1.1.21</druid.version>
     <aspectjweaver.version>1.9.5</aspectjweaver.version>
-    <log4j.version>1.2.17</log4j.version>
+    <log4j.version>2.11.2</log4j.version>
     <log4j-api.version>2.12.1</log4j-api.version>
     <log4j-core.version>2.12.1</log4j-core.version>
+    <log4j-web.version>2.12.1</log4j-web.version>
+    <slf4j.version>1.7.29</slf4j.version>
     <servlet-api.version>4.0.1</servlet-api.version>
     <jstl.version>1.2</jstl.version>
     <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
@@ -182,27 +184,25 @@
     <!-- 数据库相关依赖  end-->
 
     <!-- 7. log日志依赖 begin-->
+    <!-- log4j-slf4j-impl -->
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
       <version>${log4j.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>2.0.0-alpha1</version>
-      <scope>test</scope>
-    </dependency>
+    <!-- log4j-web -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-      <version>${log4j-api.version}</version>
+      <artifactId>log4j-web</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
+    <!-- log4j-jcl -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${log4j-core.version}</version>
+      <artifactId>log4j-jcl</artifactId>
+      <version>${log4j.version}</version>
     </dependency>
+    <!--log日志依赖 end-->
 
     <!-- 10. 其他依赖 begin -->
     <dependency>
