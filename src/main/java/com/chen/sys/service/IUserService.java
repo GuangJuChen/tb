@@ -3,6 +3,8 @@ package com.chen.sys.service;
 import com.chen.sys.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类
@@ -18,5 +20,11 @@ public interface IUserService extends IService<User> {
      * @param user
      * @return
      */
-    User addUser(User user);
+    int addUser(User user);
+
+    /**
+     * 查询用户
+     * @return
+     */
+    User getUser(String username);
 }

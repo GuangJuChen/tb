@@ -64,6 +64,13 @@ public class User implements Serializable {
     @TableField("update_time")
     private LocalDateTime updateTime;
 
+    /**
+     * 重复密码
+     * @return
+     */
+    @TableField(exist = false)
+    private String repassword;
+
     public String getUsername() {
         return username;
     }
@@ -119,6 +126,14 @@ public class User implements Serializable {
 
     public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getRepassword() {
+        return repassword;
+    }
+
+    public void setRepassword(String repassword) {
+        this.repassword = repassword;
     }
 
     @Override
