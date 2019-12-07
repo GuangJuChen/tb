@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="${ctx}/statics/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style type="text/css">
+        .register-page {
+            background: url(${ctx}/statics/dist/img/login/loginBackground.png) no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
@@ -92,7 +98,7 @@
                 </a>
             </div>
 
-            <a href="login.html" class="text-center">我已经有一个账号</a>
+            <a href="${ctx}/sys/login/loginPage" class="text-center">我已经有一个账号</a>
         </div>
         <!-- /.form-box -->
     </div><!-- /.card -->

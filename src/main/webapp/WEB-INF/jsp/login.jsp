@@ -86,10 +86,10 @@
             <!-- /.social-auth-links -->
 
             <p class="mb-1">
-                <a href="forgot-password.html">忘记密码？</a>
+                <a href="${ctx}/sys/login/forgotPage">忘记密码？</a>
             </p>
             <p class="mb-0">
-                <a href="${ctx}/sys/login/register" class="text-center">注册账号？</a>
+                <a href="${ctx}/sys/login/registerPage" class="text-center">注册账号？</a>
             </p>
         </div>
         <!-- /.login-card-body -->

@@ -34,7 +34,7 @@ public class LoginController {
      * @Author: chenGj
      * @Date: 2019/12/7 13:58
     **/
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login")
     public String login(User user){
         User user1 = userService.getUser(user.getUsername());
         logger.info(String.valueOf(user1));
@@ -54,14 +54,37 @@ public class LoginController {
     }
 
     /**
+     * @MethodName: loginPage
+     * @Description: 跳转到登录页面
+     * @Return: java.lang.String
+     * @Author: chenGj
+     * @Date: 2019/12/7 17:49
+    **/
+    @RequestMapping(value = "/loginPage")
+    public String loginPage(){
+        return "login";
+    }
+    /**
      * @MethodName: register
      * @Description: 跳转注册页面
      * @Return: java.lang.String
      * @Author: chenGj
      * @Date: 2019/12/7 14:39
     **/
-    @RequestMapping("/register")
-    public String register(){
+    @RequestMapping(value = "/registerPage")
+    public String registerPage(){
         return "register";
+    }
+
+    /**
+     * @MethodName: forgotPage
+     * @Description: 跳转到忘记密码页面
+     * @Return: java.lang.String
+     * @Author: chenGj
+     * @Date: 2019/12/7 17:52
+    **/
+    @RequestMapping(value = "/forgotPage")
+    public String forgotPage(){
+        return "forgot";
     }
 }

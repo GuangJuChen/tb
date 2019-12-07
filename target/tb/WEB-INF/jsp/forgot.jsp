@@ -1,15 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../static/head.jsp"%>
-
 <html>
-<head>
-    <title>信息建设工程欢迎您</title>
-</head>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>信息化平台建设</title>
+    <title>AdminLTE 3 | Forgot Password</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -38,58 +34,30 @@
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">欢迎登录信息化平台建设</p>
+            <p class="login-box-msg">你忘了密码？在这里您可以轻松地检索新密码。</p>
 
-            <form action="${ctx}/sys/login/login" method="post">
+            <form action="recover-password.html" method="post">
                 <div class="input-group mb-3">
-                    <input type="username" class="form-control" name="username" placeholder="用户名">
+                    <input type="email" class="form-control" placeholder="邮箱">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
                 </div>
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" name="password" placeholder="密码">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                            <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-8">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">
-                                记住密码
-                            </label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-primary btn-block">登录</button>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary btn-block">请求一个新密码</button>
                     </div>
                     <!-- /.col -->
                 </div>
             </form>
 
-            <div class="social-auth-links text-center mb-3">
-                <p>- 第三方系统登录 -</p>
-                <a href="#" class="btn btn-block btn-primary">
-                    <i class="fab fa-facebook mr-2"></i> 使用QQ登录
-                </a>
-                <a href="#" class="btn btn-block btn-danger">
-                    <i class="fab fa-google-plus mr-2"></i> 使用微信登录
-                </a>
-            </div>
-            <!-- /.social-auth-links -->
-
-            <p class="mb-1">
-                <a href="${ctx}/sys/login/forgotPage">忘记密码？</a>
+            <p class="mt-3 mb-1">
+                <a href="${ctx}/sys/login/loginPage">登录</a>
             </p>
             <p class="mb-0">
-                <a href="${ctx}/sys/login/registerPage" class="text-center">注册账号？</a>
+                <a href="${ctx}/sys/login/registerPage" class="text-center">注册</a>
             </p>
         </div>
         <!-- /.login-card-body -->
