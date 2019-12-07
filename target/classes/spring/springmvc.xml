@@ -9,6 +9,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="com.chen.sys.controller"></context:component-scan>
+	<context:component-scan base-package="com.chen.login"></context:component-scan>
 	<mvc:annotation-driven />
 	<!-- 打开静态资源，保证不会被拦截 -->
 	<mvc:default-servlet-handler/>
@@ -19,6 +20,10 @@
 	</bean>
 
 	<!-- 对静态资源文件的访问 -->
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+	<mvc:resources location="/WEB-INF/html/" mapping="/html/**"/>
+	<mvc:resources location="/WEB-INF/jsp/" mapping="/jsp/**"/>
 	<mvc:resources location="/statics/dist/" mapping="/dist/**"/>
 	<mvc:resources location="/statics/docs/" mapping="/docs/**"/>
 	<mvc:resources location="/statics/pages/" mapping="/pages/**"/>
@@ -27,9 +32,4 @@
 	<mvc:resources location="/statics/" mapping="/statics/index2.html"/>
 	<mvc:resources location="/statics/" mapping="/statics/index3.html"/>
 	<mvc:resources location="/statics/" mapping="/statics/start.html"/>
-	<mvc:resources location="/WEB-INF/img/" mapping="/img/**"/>
-	<mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
-	<mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
-	<mvc:resources location="/WEB-INF/html/" mapping="/html/**"/>
-	<mvc:resources location="/WEB-INF/jsp/" mapping="/jsp/**"/>
 </beans>
